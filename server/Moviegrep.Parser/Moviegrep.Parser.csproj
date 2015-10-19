@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Moviegrep.Parser</RootNamespace>
     <AssemblyName>Moviegrep.Parser</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -43,6 +43,7 @@
     <Compile Include="IDatasetParser.cs" />
     <Compile Include="IParser.cs" />
     <Compile Include="MovieLenseParser.cs" />
+    <Compile Include="MovieLenseRating.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

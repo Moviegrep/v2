@@ -8,6 +8,7 @@ namespace Moviegrep.Parser
 {
     public interface IParser<T>
     {
-        T Execute();
+      
+        IEnumerable<T> Execute();
     }
 }

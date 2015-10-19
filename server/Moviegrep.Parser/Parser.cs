@@ -16,13 +16,13 @@ namespace Moviegrep.Parser
         {
             ParserCollection = new Dictionary<String, IDatasetParser<T>>
           {
-              { "MovieLense", new MovieLenseParser<T>(path) }
+              { "MovieLenseRating", new MovieLenseParser<T>(path) }
           };
         }
 
-        public T Execute()
+        public IEnumerable<T> Execute()
         {
-            return ParserCollection[typeof(T).ToString()].Execute();
+            return ParserCollection[typeof(T).Name].Execute();
         }
     }
 }

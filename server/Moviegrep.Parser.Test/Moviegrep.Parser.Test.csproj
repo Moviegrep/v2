@@ -50,8 +50,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="MovieLenseParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Moviegrep.Parser\Moviegrep.Parser.csproj">
+      <Project>{2d21c206-5764-47ff-b87e-a1c53e8bd35f}</Project>
+      <Name>Moviegrep.Parser</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
