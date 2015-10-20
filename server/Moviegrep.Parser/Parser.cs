@@ -16,7 +16,8 @@ namespace Moviegrep.Parser
         {
             ParserCollection = new Dictionary<String, IDatasetParser<T>>
           {
-              { "MovieLenseRating", new MovieLenseParser<T>(path) }
+              { "MovieLenseRating", new MovieLenseParser<T>(path) },
+              { "MovieLenseMovie", new MovieLenseParser<T>(path) }
           };
         }
 

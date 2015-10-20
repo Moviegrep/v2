@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="IDatasetParser.cs" />
     <Compile Include="IParser.cs" />
+    <Compile Include="MovieLenseMovie.cs" />
     <Compile Include="MovieLenseParser.cs" />
     <Compile Include="MovieLenseRating.cs" />
+    <Compile Include="MovieLenseReader.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

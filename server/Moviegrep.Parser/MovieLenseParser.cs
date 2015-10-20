@@ -18,25 +18,15 @@ namespace Moviegrep.Parser
 
         public IEnumerable<T> Execute()
         {
-            var result = new List<MovieLenseRating>();
+            if (typeof(T).Name.Equals("MovieLenseRating"))
+                return (IEnumerable<T>)MovieLenseReader.GetMovieLenseRating(Path);
 
-            string line;
-            System.IO.StreamReader file = new System.IO.StreamReader(Path);
-            while ((line = file.ReadLine()) != null)
-            {
-                var parts = line.Split(new string[] { ",", "\t" }, StringSplitOptions.RemoveEmptyEntries);
-                var rating = new MovieLenseRating();
-                rating.UserId = Convert.ToInt32(parts[0]);
-                rating.MovieId = Convert.ToInt32(parts[1]);
-                rating.Rating = Convert.ToDecimal(parts[2]);
-                result.Add(rating);
-            }
+            if (typeof(T).Name.Equals("MovieLenseMovie"))
+                return (IEnumerable<T>)MovieLenseReader.GetMovieLenseMovie(Path);
 
-            file.Close();
 
-            return (IEnumerable<T>)result;
-            
-
+            return (IEnumerable<T>)null;
         }
+
     }
 }
