@@ -36,14 +36,17 @@ namespace Moviegrep.Parser
 
             string line;
             System.IO.StreamReader file = new System.IO.StreamReader(path);
+            int movieId;
             while ((line = file.ReadLine()) != null)
             {
                 var parts = line.Split(new string[] { ",", "\t" }, StringSplitOptions.RemoveEmptyEntries);
                 var movie = new MovieLenseMovie();
-                movie.MovieId = Convert.ToInt32(parts[0]);
-                movie.Title = parts[1];
-                movie.Genre = parts[2];
-
+                if (int.TryParse(parts[0], out movieId))
+                {
+                    movie.MovieId = movieId;
+                    movie.Title = parts[1];
+                    movie.Genre = parts[2];
+                }
                 result.Add(movie);
             }
 
